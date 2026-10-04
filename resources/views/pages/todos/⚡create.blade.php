@@ -2,8 +2,7 @@
 use Livewire\Attributes\Title;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
-new #[Title('Todo を登録')] class extends Component
-{
+new #[Title('Todo を登録')] class extends Component {
     #[Validate('required|string|max:100')]
     public string $title = '';
     #[Validate('required|string|max:2000')]
