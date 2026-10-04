@@ -12,7 +12,10 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->string('title', 100);
-            $table->text('description')->nullable();
+            $table->text('memo');
+            $table->string('category', 100);
+            $table->dateTime('start_at');
+            $table->dateTime('due_at');
             $table->timestamps();
         });
     }
