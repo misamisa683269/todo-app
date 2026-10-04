@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::view('/', 'welcome')->name('home');
+Route::redirect('/', '/todos')->name('home');
 Route::livewire('/todos', 'pages::todos.index')->name('todos.index');
 
 Route::middleware(['auth', 'verified'])->group(function () {
@@ -11,4 +11,4 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::livewire('/todos/{todo}/edit', 'pages::todos.edit')->name('todos.edit');
 });
 
-require __DIR__ . '/settings.php';
+require __DIR__.'/settings.php';
