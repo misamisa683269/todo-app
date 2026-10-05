@@ -1,7 +1,5 @@
 <?php
 
-test('returns a successful response', function () {
-    $response = $this->get(route('home'));
-
-    $response->assertOk();
+test('トップページは Todo 一覧に転送される', function () {
+    $this->get(route('home'))->assertRedirect('/todos');
 });
